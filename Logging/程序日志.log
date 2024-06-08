@@ -1,0 +1,50 @@
+tools.py------62
+2024-06-07 21:45:38,433 - root - INFO - 检测代理设置选项
+pool_get.py------35
+2024-06-07 21:45:38,434 - root - INFO - 检测txt文件中是否存在代理e:\Work_space\VIDEO_DOWLOADER\proxy.txt
+pool_get.py------38
+2024-06-07 21:45:38,435 - root - INFO - 代理池为['60.167.22.154:41498', '119.102.158.118:45250', '182.138.153.25:46425', '180.127.202.233:34363', '117.95.7.106:31206', '114.231.82.234:36273', '122.232.238.174:42103', '113.231.8.135:33255', '61.177.11.133:45750', '49.66.196.115:45706']
+M3_Analy.py------8
+2024-06-07 21:45:38,436 - root - INFO - {'CSV_SAVE': False, 'HEADERS': {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36', 'Referer': 'https://jx.ijujitv.cc/'}, 'INDEX_URL': {'真人娃娃的目的': 'https://yzzy.play-cdn22.com/20240323/210_f75cd762/2000k/hls/mixed.m3u8', 'MegaloBox第一集': 'https://cdn15.yzzy-tv-cdn.com/20230406/6535_889455b6/2000k/hls/index.m3u8'}, 'KEY_PROXY': 13388221448, 'MONGODB_COL': 'FIRST', 'MONGODB_DATABAS': 'M3U8_LIST', 'MONGODB_SAVE': True, 'PD_PROXY': 'KAOuSIYn', 'PROXY_SET': False, 'RETRY': 3, 'TAGS': False, 'THREADNUMBER_M3U8': 20, 'THREADNUMBER_TS': 2000, 'TIMEOUT': 10}
+Load_Setting.py------12
+2024-06-07 21:45:38,437 - root - INFO - 检测用户是否在config中配置m3u8网站列表
+base.py------88
+2024-06-07 21:45:38,437 - root - INFO - 得到的并发数设置为20
+M3_Analy.py------34
+2024-06-07 21:45:38,437 - root - INFO - 得到待爬取列表{'真人娃娃的目的': 'https://yzzy.play-cdn22.com/20240323/210_f75cd762/2000k/hls/mixed.m3u8', 'MegaloBox第一集': 'https://cdn15.yzzy-tv-cdn.com/20230406/6535_889455b6/2000k/hls/index.m3u8'}
+tools.py------55
+2024-06-07 21:45:38,438 - root - INFO - 当前数据为{'真人娃娃的目的': 'https://yzzy.play-cdn22.com/20240323/210_f75cd762/2000k/hls/mixed.m3u8', 'MegaloBox第一集': 'https://cdn15.yzzy-tv-cdn.com/20230406/6535_889455b6/2000k/hls/index.m3u8'}
+tools.py------57
+2024-06-07 21:45:38,438 - root - INFO - 正在转换成列表-元组序列[('真人娃娃的目的', 'https://yzzy.play-cdn22.com/20240323/210_f75cd762/2000k/hls/mixed.m3u8'), ('MegaloBox第一集', 'https://cdn15.yzzy-tv-cdn.com/20230406/6535_889455b6/2000k/hls/index.m3u8')]
+base.py------162
+2024-06-07 21:45:38,439 - root - INFO - 当前任务为----真人娃娃的目的
+base.py------162
+2024-06-07 21:45:38,440 - root - INFO - 当前任务为----MegaloBox第一集
+base.py------129
+2024-06-07 21:45:38,440 - root - INFO - 代理未设置以下任务真人娃娃的目的未使用代理
+base.py------129
+2024-06-07 21:45:38,440 - root - INFO - 代理未设置以下任务MegaloBox第一集未使用代理
+base.py------99
+2024-06-07 21:45:39,527 - root - INFO - 当前任务完成了结果为--------('真人娃娃的目的', <Response [200]>)
+base.py------99
+2024-06-07 21:45:39,529 - root - INFO - 当前任务完成了结果为--------('MegaloBox第一集', <Response [200]>)
+M3_Analy.py------25
+2024-06-07 21:45:39,529 - root - INFO - 检测M3U8分析器[('真人娃娃的目的', <Response [200]>), ('MegaloBox第一集', <Response [200]>)]
+tools.py------41
+2024-06-07 21:45:39,530 - root - INFO - 正在处理相关的数据
+tools.py------48
+2024-06-07 21:45:39,530 - root - INFO - 检测First_m3u8_handler传值([('真人娃娃的目的', <Response [200]>), ('MegaloBox第一集', <Response [200]>)], [('真人娃娃的目的', 'https://yzzy.play-cdn22.com/20240323/210_f75cd762/2000k/hls/mixed.m3u8'), ('MegaloBox第一集', 'https://cdn15.yzzy-tv-cdn.com/20230406/6535_889455b6/2000k/hls/index.m3u8')])
+tools.py------23
+2024-06-07 21:45:39,531 - root - INFO - 检测到该('真人娃娃的目的', 'https://yzzy.play-cdn22.com/20240323/210_f75cd762/2000k/hls/mixed.m3u8')是第二层链接
+tools.py------23
+2024-06-07 21:45:39,532 - root - INFO - 检测到该('MegaloBox第一集', 'https://cdn15.yzzy-tv-cdn.com/20230406/6535_889455b6/2000k/hls/index.m3u8')是第二层链接
+tools.py------34
+2024-06-07 21:45:39,533 - root - INFO - 检测一共多少个视频链接2
+base.py------7
+2024-06-07 21:45:39,536 - root - INFO - 存储数据在mongodb中
+Mongodb.py------13
+2024-06-07 21:45:39,541 - root - INFO - 此数据已经存在，返回数据
+Mongodb.py------13
+2024-06-07 21:45:39,541 - root - INFO - 此数据已经存在，返回数据
+main.py------9
+2024-06-07 21:45:39,542 - root - INFO - *****************总计花费时间为1.1105563640594482
