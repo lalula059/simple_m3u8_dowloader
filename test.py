@@ -32,8 +32,33 @@ import time
 #     y = time.time()
 #     print("总时间为{}".format(y-x))
 
+# from Crypto.Cipher import AES
+# from Crypto.Random import get_random_bytes
+# from Crypto.Util.Padding import pad, unpad
 
+# # 加密函数
 
+# # 解密函数
+# def decrypt(key, data,iv):
+#     cipher = AES.new(key, AES.MODE_CBC, iv)
+#     pt = unpad(cipher.decrypt(data), AES.block_size)
+#     return pt
+
+# # 测试函数
+# def main():
+#     with open('af_Key.txt','+rb') as f:
+#         key = f.read()
+#     with open('iv.txt','+rb') as f:
+#         iv = f.read().decode('utf-8')[:AES.block_size].encode('utf-8')
+#     with open('ceshi.txt','+rb') as f:
+#         data = f.read()
+#     decrypted_data = decrypt(key, data,iv)
+#     with open("1.ts",'wb') as f:
+#         f.write(decrypted_data)
+#     print("Decrypted:", decrypted_data)
+
+# if __name__ == "__main__":
+#     main()
 
 """"""
 # async def shuchu():
@@ -75,17 +100,36 @@ import pymongo
 # """练习存储nametuple"""
 # new_col.insert_one(m3u8_first._asdict())
 
-dbs = pymongo.MongoClient()
-db = dbs['M3U8_LIST']
-col  = db['FIRST'] 
-res = col.find({'name':{'$regex':'ox'}})
-
-for i in res:
-    print(i['name'])
+# dbs = pymongo.MongoClient()
+# db = dbs['M3U8_LIST']
+# col  = db['FIRST'] 
+# res = col.find({'name':{'$regex':'.*'}})
+# for i in res:
+#     print(i['name'])
     
-class A:
-    def __init__(self) -> None:
-        self.x = False
-a = A()
-p = getattr(a,'x')
-print(p)
+# class A:
+#     def __init__(self) -> None:
+#         self.x = False
+
+"""练习多进程"""
+# import multiprocessing
+# def add(x):
+#     time.sleep(2)
+    
+#     for i in x:
+#         print(i*i)
+# ty = [1,2,3,4,5]
+# tr= [5,5,5,5,5]
+# temp = []
+# if __name__ == '__main__':
+#     pr1 = multiprocessing.Process(target=add,args=(tr,))
+#     pr2 = multiprocessing.Process(target=add,args=(ty,))
+#     pr1.start()
+#     pr2.start()
+
+#     pr1.join()
+#     pr2.join()
+
+
+x = '123123'
+print(x[-2:])

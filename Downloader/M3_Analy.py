@@ -2,10 +2,11 @@ from utils.Load_Setting import get_m3u8
 from Logging.logg_create import logger
 from Downloader.base import multi_Thread
 from utils.tools import format_m3u8_list,First_m3u8_handler
+# 这一文件时请求m3u8调用
 class M3_Analy:
     def __init__(self,settings = None,pool = None) -> None:
         self.setting = settings
-        logger.info(self.setting)
+        # logger.info(self.setting)
         self.pool = pool
         self.mul_thread = None
     def start(self):
