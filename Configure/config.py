@@ -14,7 +14,8 @@ CSV_SAVE = False
 
 
 # 网站和名字设置
-INDEX_URL = {'肖申克的救赎':'https://shls.mcloud.139.com/hls/K78d3a71a6dcac4580d7984d14b3a1098c/single/video/0/1080/index.m3u8'}
+INDEX_URL = {'国家性生活管理委员会':'https://jpzy01.com/20211117/TL0MRqI5/800kb/hls/index.m3u8',
+             }
 # 请求头设置
 HEADERS = { 'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36'}
 

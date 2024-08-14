@@ -84,8 +84,14 @@ def AES_handler(data,settings):
         patterns_pre = re.compile(r'\w+.m3u8')
         aft = patterns_pre.findall(data.get('Second_m3u8'))[0]
         # 固定了加密字段网页，且取后面URI关键字段
-        AES_KEY_THREE = AES_KEY_WORD[0].split(',')
-        AES_KEY_URL = data.get('Second_m3u8').replace(aft,AES_KEY_THREE[1].split('=')[1][1:-1])
+        if len(AES_KEY_WORD) > 1:
+            AES_KEY_THREE = AES_KEY_WORD[-1].split(',')
+        else:
+            AES_KEY_THREE = AES_KEY_WORD[0].split(',')
+        if 'http' not in AES_KEY_THREE[1]:
+            AES_KEY_URL = data.get('Second_m3u8').replace(aft,AES_KEY_THREE[1].split('=')[1][1:-1])
+        else:
+            AES_KEY_URL = AES_KEY_THREE[1].split('=')[1][1:-1]
         logger.info(f"检测到关键字{AES_KEY_WORD}")
         # 添加匹配到的关键字段
         data.__setitem__('AES_KEY_WORDS',AES_KEY_THREE)

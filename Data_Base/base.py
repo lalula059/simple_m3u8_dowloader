@@ -2,6 +2,7 @@ from Logging.logg_create import logger
 from Data_Base.Mongodb import Mongodb
 from collections import namedtuple
 import json
+from urllib.parse import urlparse
 __all__ = ['ts_all_list']
 def get_mongo(settings):
     mongo = Mongodb(settings=settings)
@@ -26,11 +27,17 @@ def  get_Data_handler(settings,control = None):
 
 def Data_clean(args):
     # 首先格式化ts视频链接,并且添加进去临时内存值,首先是检测是否为ts格式
-    if('ts' in args.get('Second_m3u8_content')):
+    if(1):
         import re
-        # 提取ts列表,用不取分组
-        patterns = re.compile('((?:http)?\w.*.ts)')
-        res = patterns.findall(args.get('Second_m3u8_content'),re.M)
+        # 提取ts列表,用不取分组,如果JPG格式
+        if 'jpg' not in args.get('Second_m3u8_content'):
+            patterns = re.compile('((?:http)?\w.*.ts)')
+            res = patterns.findall(args.get('Second_m3u8_content'),re.M)
+        else:
+            patterns = re.compile('((?:http)?\w.*.jpg)')
+            res = patterns.findall(args.get('Second_m3u8_content'),re.M)[5:]
+        # 进行第二次处理
+
         # 添加新字段
         
         #因为加了密后面也是ts结尾，所以说还要判断
@@ -42,8 +49,14 @@ def Data_clean(args):
         prefix = patterns_pre.findall(args.get('Second_m3u8'))[0]
         
         # 如果不是http开头则重新设置ts文件,通过正则提取ts
-        if 'http' not in res[0]:
+        if 'http' not in res[0] :
             res_af = [args.get('Second_m3u8').replace(prefix,i) for i in res]
+            temp_res = []
+            for i in range(0,len(res_af)):
+                item = list(dict.fromkeys(res_af[i].split('/')))
+                item = '/'.join(item)
+                temp_res.append(item)
+            res_af = temp_res
             args.__setitem__(__all__[0],res_af)  
         else:
             args.__setitem__(__all__[0],res) 
