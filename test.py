@@ -131,5 +131,9 @@ import pymongo
 #     pr2.join()
 
 
+import requests
 x = '123123'
 print(x[-2:])
+resp = requests.get('https://jpzy01.com/20240812/XaIDhjOt/800kb/hls/OBo0czj4.jpg')
+with open('1.ts','+wb') as f:
+    f.write(resp.content)

@@ -17,8 +17,8 @@ class Schedule:
     def start(self):
         """第一部分"""
         
-        data = self.M3_Fi.start()
-        save_Data_handler(data=data,settings=self.settingss)
+        # data = self.M3_Fi.start()
+        # save_Data_handler(data=data,settings=self.settingss)
 
         """第二部分"""
 

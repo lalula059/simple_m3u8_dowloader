@@ -79,7 +79,7 @@ class Main_AThread:
                     else:
                         write_file(self.movie_name_path,self.data['name'],index=index,data = resp.content)
                 else:
-                    logger.error("出错了，是不是被封禁了")
+                    logger.error("出错了，是不是被封禁了,或者域名出错")
         except KeyboardInterrupt as e:
             print("你已结束进程")
     
@@ -128,5 +128,8 @@ class EX_AThread(Main_AThread):
             return data
 
     def decry_set(self):
-        self.IV = (self.data['AES_KEY_WORDS'][2].split('=')[1])[:AES.block_size].encode('utf-8')
+        if len(self.data['AES_KEY_WORDS']) == 3:
+            self.IV = (self.data['AES_KEY_WORDS'][2].split('=')[1])[:AES.block_size].encode('utf-8')
+        else:
+            self.IV = b'0000000000000000'
         self.af_Key =  self.KEY.content
